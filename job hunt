@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Sarver — Marketing &amp; GTM Execution</title>
+<meta name="description" content="Justin Sarver — Marketing Manager focused on campaign execution, channel enablement, and customer-driven strategy in edtech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F1E7;
+    --bg-warm: #EFE7D6;
+    --card: #FCFAF4;
+    --ink: #2B2418;
+    --ink-soft: #6B6153;
+    --line: #DCD0B8;
+    --moss: #4B5A38;
+    --moss-deep: #37432A;
+    --ochre: #B2793D;
+    --brick: #8C4E37;
+    --focus: #37432A;
+    --radius: 3px;
+    --maxw: 1040px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  a{color:var(--moss-deep);}
+  a:focus-visible, button:focus-visible, .tab:focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:3px;
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,241,231,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:var(--maxw); margin:0 auto;
+  }
+  .nav-name{font-family:'Fraunces',serif; font-weight:600; font-size:19px;}
+  .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    color:var(--ink-soft); text-decoration:none; font-size:14.5px;
+    letter-spacing:0.02em; text-transform:uppercase; font-weight:600;
+    border-bottom:2px solid transparent; padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .nav-links a:hover{color:var(--moss-deep); border-color:var(--ochre);}
+  .nav-toggle{display:none;}
+  @media (max-width:720px){
+    .nav-links{display:none;}
+  }
+
+  /* HERO */
+  .hero{padding:88px 0 64px; position:relative;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--brick); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--brick); display:inline-block;}
+  .hero h1{font-size:clamp(36px,5.4vw,58px); line-height:1.05; max-width:820px;}
+  .hero .role{color:var(--moss-deep); }
+  .hero p.lede{
+    max-width:600px; margin-top:22px; color:var(--ink-soft); font-size:19px;
+  }
+  .hero-cta{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:var(--radius);
+    font-weight:600; font-size:15px; text-decoration:none;
+    border:1px solid var(--ink);
+    transition:transform .12s ease, background .15s ease, color .15s ease;
+  }
+  .btn-primary{background:var(--moss-deep); color:#FBF8F0; border-color:var(--moss-deep);}
+  .btn-primary:hover{background:var(--moss); transform:translateY(-1px);}
+  .btn-ghost{color:var(--ink); background:transparent;}
+  .btn-ghost:hover{background:var(--bg-warm); transform:translateY(-1px);}
+
+  /* STAT STRIP */
+  .stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); margin-top:56px;
+    border-radius:var(--radius); overflow:hidden;
+  }
+  .stat{background:var(--card); padding:22px 20px;}
+  .stat .num{font-family:'Fraunces',serif; font-weight:700; font-size:clamp(22px,3vw,30px); color:var(--brick);}
+  .stat .label{font-size:13.5px; color:var(--ink-soft); margin-top:6px;}
+  @media (max-width:720px){ .stats{grid-template-columns:repeat(2,1fr);} }
+
+  /* SECTION SHELL */
+  section{padding:76px 0;}
+  section.alt{background:var(--bg-warm); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);}
+  .section-head p{color:var(--ink-soft); margin-top:12px; font-size:16.5px;}
+
+  /* TIMELINE */
+  .timeline{border-left:2px solid var(--line); margin-left:6px;}
+  .tl-item{position:relative; padding:0 0 40px 32px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-7px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--card); border:2px solid var(--moss-deep);
+  }
+  .tl-item.current::before{background:var(--brick); border-color:var(--brick);}
+  .tl-date{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink-soft); letter-spacing:0.03em;}
+  .tl-role{font-family:'Fraunces',serif; font-weight:600; font-size:20px; margin-top:4px;}
+  .tl-org{color:var(--moss-deep); font-weight:600; font-size:15px; margin-top:2px;}
+  .tl-desc{margin-top:8px; color:var(--ink-soft); font-size:15.5px; max-width:600px;}
+
+  /* CAPABILITIES */
+  .cap-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:900px){ .cap-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:540px){ .cap-grid{grid-template-columns:1fr;} }
+  .cap-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 20px; position:relative;
+  }
+  .cap-card .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ochre);
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .cap-card h3{font-size:18px; margin-top:8px;}
+  .cap-card p{font-size:14.5px; color:var(--ink-soft); margin-top:8px;}
+
+  /* CASE STUDIES */
+  .cs-list{display:flex; flex-direction:column; gap:16px;}
+  .cs-item{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .cs-trigger{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:18px;
+    font-family:inherit; color:var(--ink);
+  }
+  .cs-trigger:hover{background:var(--bg-warm);}
+  .cs-trigger-left{display:flex; align-items:baseline; gap:16px;}
+  .cs-index{font-family:'IBM Plex Mono',monospace; color:var(--brick); font-size:14px;}
+  .cs-title{font-family:'Fraunces',serif; font-weight:600; font-size:19px;}
+  .cs-role-tag{font-size:13px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; margin-top:2px;}
+  .cs-chevron{
+    width:20px; height:20px; flex-shrink:0; transition:transform .2s ease; color:var(--ink-soft);
+  }
+  .cs-item.open .cs-chevron{transform:rotate(45deg);}
+  .cs-panel{
+    max-height:0; overflow:hidden; transition:max-height .28s ease;
+  }
+  .cs-panel-inner{padding:0 24px 26px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:760px){ .cs-panel-inner{grid-template-columns:1fr;} }
+  .cs-col .col-label{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--moss-deep); margin-bottom:8px; display:block;
+  }
+  .cs-col p{font-size:15px; color:var(--ink-soft); margin:0;}
+  .cs-col.outcome p{color:var(--ink); font-weight:600;}
+
+  /* TESTIMONIALS placeholder */
+  .testi-placeholder{
+    border:1px dashed var(--line); border-radius:var(--radius);
+    padding:34px 28px; text-align:center; color:var(--ink-soft);
+    background:var(--card);
+  }
+  .testi-placeholder .mono{font-size:13px; letter-spacing:0.04em; color:var(--brick);}
+
+  /* WHY / CLOSING */
+  .why-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
+  @media (max-width:800px){ .why-grid{grid-template-columns:1fr;} }
+  .why-copy p{color:var(--ink-soft); font-size:16.5px; margin-top:16px;}
+  .why-copy p:first-child{margin-top:0;}
+  .pull{
+    background:var(--card); border-left:3px solid var(--brick); border-radius:0 var(--radius) var(--radius) 0;
+    padding:22px 24px; font-family:'Fraunces',serif; font-size:19px; font-style:italic; color:var(--moss-deep);
+  }
+
+  /* FOOTER */
+  footer{padding:56px 0 40px; border-top:1px solid var(--line);}
+  .footer-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  footer h2{font-size:26px;}
+  footer p{color:var(--ink-soft); margin-top:10px; max-width:420px;}
+  .footer-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .fine{margin-top:40px; font-size:13px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <span class="nav-name">Justin Sarver</span>
+    <ul class="nav-links">
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#path">Path</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Marketing Manager · Campaign &amp; GTM Execution</div>
+      <h1>I keep marketing campaigns <span class="role">organized, on time, and tied to what the customer actually needs.</span></h1>
+      <p class="lede">Five years turning edtech go-to-market work — multi-channel campaigns, channel partner relationships, and sales enablement — into projects that ship on schedule and decisions grounded in real customer data.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">See the case studies</a>
+        <a class="btn btn-ghost" href="mailto:justin.rh.sarver@gmail.com">Get in touch</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">10+</div>
+          <div class="label">Workstreams coordinated on a single state adoption campaign</div>
+        </div>
+        <div class="stat">
+          <div class="num">$400K</div>
+          <div class="label">Year-one sales growth from a customer-data-driven strategy</div>
+        </div>
+        <div class="stat">
+          <div class="num">90%+</div>
+          <div class="label">Customer satisfaction reached, up from a 65% baseline</div>
+        </div>
+        <div class="stat">
+          <div class="num">5 yrs</div>
+          <div class="label">In edtech, from field enablement to campaign execution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Where I fit</div>
+        <h2>Four disciplines, one habit: closing the loop</h2>
+        <p>No single title captures it, so here's the shape of the work — where I've spent real time, and what I bring to each.</p>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-card reveal">
+          <div class="tag">Orchestration</div>
+          <h3>Campaign execution</h3>
+          <p>Running multi-channel campaigns end to end — aligning content, creative, web, and media teams to a shared timeline and customer journey.</p>
+        </div>
+        <div class="cap-card reveal">
+          <div class="tag">Advocacy</div>
+          <h3>Channel &amp; partner relations</h3>
+          <p>Sitting between field partners and internal teams — translating frustration and feedback into documentation, resources, and resolved outcomes.</p>
+        </div>
+        <div class="cap-card reveal">
+          <div class="tag">Analysis</div>
+          <h3>Customer insight</h3>
+          <p>Building personas from real research, then using them to shape pricing, positioning, and business decisions — not just reporting the data.</p>
+        </div>
+        <div class="cap-card reveal">
+          <div class="tag">Enablement</div>
+          <h3>Sales &amp; GTM tools</h3>
+          <p>Writing the guides, training the reps, and documenting the process so the next person can pick it up without losing momentum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Career path</div>
+        <h2>Five years building toward marketing leadership</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item current reveal">
+          <div class="tl-date">May 2025 – June 2026</div>
+          <div class="tl-role">Associate Campaign Execution Manager</div>
+          <div class="tl-org">Cengage Group</div>
+          <div class="tl-desc">Managed end-to-end execution of multi-channel campaigns, applying a full view of the customer journey to reprioritize when it mattered.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">June 2024 – May 2025</div>
+          <div class="tl-role">Associate Channel Partnerships Manager</div>
+          <div class="tl-org">Cengage Group</div>
+          <div class="tl-desc">Primary point of contact for channel partners — turned field feedback into documentation and go-to-market resources.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">Dec 2022 – June 2024</div>
+          <div class="tl-role">Channel Team Coordinator</div>
+          <div class="tl-org">Cengage Group</div>
+          <div class="tl-desc">Supported partner performance and go-to-market execution; kept product data accurate across partner channels.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">Sept 2021 – Dec 2022</div>
+          <div class="tl-role">Field/Pricing Coordinator</div>
+          <div class="tl-org">Imagine Learning</div>
+          <div class="tl-desc">Built training and pricing guides for sales enablement; analyzed the competitive landscape to inform positioning.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">June 2018 – Sept 2021</div>
+          <div class="tl-role">Store Manager</div>
+          <div class="tl-org">Abercrombie &amp; Fitch</div>
+          <div class="tl-desc">Built customer personas from real research and used them to drive a full year of positive comps.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Field notes</div>
+        <h2>Four projects, in their own words</h2>
+        <p>Smaller than one flagship story, but each one shows a different muscle. Click any to expand.</p>
+      </div>
+
+      <div class="cs-list">
+        <div class="cs-item reveal">
+          <button class="cs-trigger" aria-expanded="false">
+            <div class="cs-trigger-left">
+              <span class="cs-index">01</span>
+              <div>
+                <div class="cs-title">Organizing a state adoption campaign from zero</div>
+                <div class="cs-role-tag">Cross-functional orchestration</div>
+              </div>
+            </div>
+            <svg class="cs-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="cs-panel">
+            <div class="cs-panel-inner">
+              <div class="cs-col"><span class="col-label">Problem</span><p>A large state adoption campaign — 10+ projects and varied collateral, with staggered deadlines that carried real risk of shifting.</p></div>
+              <div class="cs-col"><span class="col-label">Approach</span><p>Built the organizing structure from the ground up and hosted weekly cross-functional check-ins to track dependencies and surface risk early.</p></div>
+              <div class="cs-col outcome"><span class="col-label">Outcome</span><p>On-time delivery maintained through departure, with the campaign handed off fully organized and ready for the next owner.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-item reveal">
+          <button class="cs-trigger" aria-expanded="false">
+            <div class="cs-trigger-left">
+              <span class="cs-index">02</span>
+              <div>
+                <div class="cs-title">Turning a price increase into a resolved partner issue</div>
+                <div class="cs-role-tag">Channel &amp; partner advocacy</div>
+              </div>
+            </div>
+            <svg class="cs-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="cs-panel">
+            <div class="cs-panel-inner">
+              <div class="cs-col"><span class="col-label">Problem</span><p>Multiple list price increases had to be delivered to a book of channel partners — an unwelcome message, more than once.</p></div>
+              <div class="cs-col"><span class="col-label">Approach</span><p>Used each rollout to build deeper pricing and competitive fluency. When one partner pushed back hard, documented their feedback with supporting data and escalated it internally.</p></div>
+              <div class="cs-col outcome"><span class="col-label">Outcome</span><p>Secured a partner-specific discount — frontline friction turned into a resolved, evidence-backed business case.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-item reveal">
+          <button class="cs-trigger" aria-expanded="false">
+            <div class="cs-trigger-left">
+              <span class="cs-index">03</span>
+              <div>
+                <div class="cs-title">Building customer personas that changed how the store ran</div>
+                <div class="cs-role-tag">Customer insight &amp; strategy</div>
+              </div>
+            </div>
+            <svg class="cs-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="cs-panel">
+            <div class="cs-panel-inner">
+              <div class="cs-col"><span class="col-label">Problem</span><p>No formal understanding of who the store's customers actually were, or why they bought.</p></div>
+              <div class="cs-col"><span class="col-label">Approach</span><p>Surveyed and studied the customer base directly, built out personas, and used the insights to guide decisions and brief upper management.</p></div>
+              <div class="cs-col outcome"><span class="col-label">Outcome</span><p>A full year of positive comps year-over-year, driven by understanding how, when, and why customers shopped.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-item reveal">
+          <button class="cs-trigger" aria-expanded="false">
+            <div class="cs-trigger-left">
+              <span class="cs-index">04</span>
+              <div>
+                <div class="cs-title">Building enablement guides sales teams actually used</div>
+                <div class="cs-role-tag">GTM &amp; sales enablement</div>
+              </div>
+            </div>
+            <svg class="cs-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="cs-panel">
+            <div class="cs-panel-inner">
+              <div class="cs-col"><span class="col-label">Problem</span><p>Sales needed clear, current guidance on how to position, price, and speak to a shifting portfolio of products and services.</p></div>
+              <div class="cs-col"><span class="col-label">Approach</span><p>Built enablement guides, delivered group and 1:1 trainings on sales tools and CRM, then wrote a full how-to handoff guide for the role itself.</p></div>
+              <div class="cs-col outcome"><span class="col-label">Outcome</span><p>A team and successor set up for continuity — the role kept running without a ramp-up gap.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">What colleagues say</div>
+        <h2>Coming soon</h2>
+      </div>
+      <div class="testi-placeholder reveal">
+        <p class="mono">RECOMMENDATIONS BEING GATHERED</p>
+        <p style="margin-top:8px;">This section is reserved for a few words from people I've worked with directly. Check back soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Why marketing leadership, why now</div>
+        <h2>The bridge I'm building toward</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-copy reveal">
+          <p>I've spent five years on the execution side of marketing — the campaigns, the partner relationships, the enablement work that has to be right before anything ships. That fundamentals-first path was deliberate.</p>
+          <p>The next step is ownership: taking a portfolio of campaigns or partner relationships and running the strategy, not just the delivery. Longer term, I want to grow into people leadership — building the kind of team I'd have wanted to learn from.</p>
+          <p>A Marketing Manager role is the right bridge: enough scope to prove out strategic judgment, still close enough to the work to keep it grounded in what customers actually need.</p>
+        </div>
+        <div class="pull reveal">
+          "Understanding how, when, and why people decide is the throughline of everything I've worked on — from a store floor to a state adoption campaign."
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Let's talk.</h2>
+        <p>Open to Marketing Manager-level roles in edtech and mission-driven organizations — remote-first, with flexibility to relocate.</p>
+      </div>
+      <div class="footer-links">
+        <a class="btn btn-primary" href="mailto:justin.rh.sarver@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="#" id="linkedin-link">LinkedIn</a>
+      </div>
+    </div>
+    <div class="fine">Justin R. H. Sarver, M.S. · Houston, TX · Built for the search, not for show.</div>
+  </div>
+</footer>
+
+<script>
+  // Accordion for case studies
+  document.querySelectorAll('.cs-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.cs-item');
+      const panel = item.querySelector('.cs-panel');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.cs-item.open').forEach(openItem => {
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.cs-panel').style.maxHeight = null;
+          openItem.querySelector('.cs-trigger').setAttribute('aria-expanded','false');
+        }
+      });
+
+      if(isOpen){
+        item.classList.remove('open');
+        panel.style.maxHeight = null;
+        btn.setAttribute('aria-expanded','false');
+      } else {
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
