@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you, Stephen — Justin Sarver</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F1E7;
+    --card: #FCFAF4;
+    --ink: #2B2418;
+    --ink-soft: #6B6153;
+    --line: #DCD0B8;
+    --moss-deep: #37432A;
+    --moss: #4B5A38;
+    --ochre: #B2793D;
+    --brick: #8C4E37;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Sans 3', system-ui, sans-serif;
+    font-size:17px; line-height:1.65;
+    padding:0 20px;
+  }
+  .page{max-width:760px; margin:0 auto; padding:64px 0 80px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--brick); margin-bottom:16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--brick); display:inline-block;}
+  h1{
+    font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:clamp(28px,4.6vw,40px);
+    line-height:1.15; margin:0 0 16px; color:var(--ink); max-width:600px;
+  }
+  .intro{color:var(--ink-soft); font-size:17.5px; max-width:560px; margin-bottom:52px;}
+
+  /* Stepper */
+  .stepper{
+    display:flex; align-items:center; gap:0; margin-bottom:60px; flex-wrap:wrap;
+  }
+  .step{display:flex; align-items:center; gap:12px;}
+  .step .dot{
+    width:14px; height:14px; border-radius:50%; border:2px solid var(--moss-deep); background:var(--card); flex-shrink:0;
+  }
+  .step.done .dot{background:var(--moss-deep);}
+  .step.next .dot{background:var(--ochre); border-color:var(--ochre);}
+  .step .label{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-soft); letter-spacing:0.02em;}
+  .step.done .label{color:var(--moss-deep); font-weight:600;}
+  .step.next .label{color:var(--ochre); font-weight:600;}
+  .step-line{width:44px; height:1px; background:var(--line); margin:0 14px;}
+  @media (max-width:640px){
+    .stepper{gap:8px;}
+    .step-line{width:20px; margin:0 6px;}
+  }
+
+  /* Cards */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:56px;}
+  @media (max-width:720px){ .cards{grid-template-columns:1fr;} }
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:3px;
+    padding:24px 22px; position:relative;
+  }
+  .card .num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ochre);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; display:block;
+  }
+  .card h3{
+    font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:0 0 10px; color:var(--ink);
+  }
+  .card p{margin:0; color:var(--ink-soft); font-size:15px;}
+
+  .pull{
+    background:var(--card); border-left:3px solid var(--brick); border-radius:0 3px 3px 0;
+    padding:24px 26px; font-family:'Fraunces',serif; font-size:20px; font-style:italic;
+    color:var(--moss-deep); margin-bottom:52px; max-width:640px;
+  }
+
+  .closing p{color:var(--ink); font-size:17px; max-width:600px; margin:0 0 18px;}
+  .sign-off{margin-top:8px;}
+  .sign-off .name{font-family:'Fraunces',serif; font-weight:600; font-size:20px; margin-top:4px;}
+
+  hr{border:none; border-top:1px solid var(--line); margin:52px 0 28px;}
+  .footer-note{
+    font-size:14.5px; color:var(--ink-soft); display:flex; justify-content:space-between;
+    align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .footer-note a{color:var(--moss-deep); text-decoration:none; font-weight:600;}
+  .footer-note a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="eyebrow">After our conversation</div>
+    <h1>Three things I keep coming back to, Stephen.</h1>
+    <p class="intro">Thank you for today, it didn't feel like an interview so much as two people talking honestly about what the next few years could look like. A few specifics are still sitting with me.</p>
+
+    <div class="stepper">
+      <div class="step done">
+        <span class="dot"></span>
+        <span class="label">OUR CONVERSATION</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step next">
+        <span class="dot"></span>
+        <span class="label">TEAM CONVERSATIONS</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <span class="dot"></span>
+        <span class="label">WHAT'S NEXT</span>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Mentorship, not just headcount</h3>
+        <p>You're building this role to grow under your mentorship, not just fill a seat. That's exactly the kind of team I want to learn inside of, and I want to earn my place by helping the team hit its goals along the way.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Execution into strategy</h3>
+        <p>I've spent years close enough to sales, partners, and customers to see how a decision actually lands. That vantage point is what I think lets me bring new angles to strategy work, not just execute someone else's plan. It feels like real groundwork for the shift, not a detour from it.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Comfortable with change</h3>
+        <p>Priorities shifting, and the team being used to it, didn't worry me. If anything, it was one of the more reassuring things you said today.</p>
+      </div>
+    </div>
+
+    <div class="pull">"I went in already interested in this role. I'm leaving it more hopeful than I expected to be, and that's not something I say lightly."</div>
+
+    <div class="closing">
+      <p>I'd welcome the chance to keep talking with the rest of the team, whenever that's the right next step. Thank you again for your time and your candor today.</p>
+      <div class="sign-off">
+        <div>Best,</div>
+        <div class="name">Justin</div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="footer-note">
+      <span>More on my background, if useful:</span>
+      <a href="https://justinruhurt.github.io" target="_blank" rel="noopener">justinruhurt.github.io &rarr;</a>
+    </div>
+  </div>
+</body>
+</html>
